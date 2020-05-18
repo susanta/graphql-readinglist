@@ -1,8 +1,12 @@
 const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const schema = require('./schema/schema');
+const connectDB = require('./config/db');
 
 const app = express();
+
+// Connect DB
+connectDB();
 
 app.use(
   '/graphql',
